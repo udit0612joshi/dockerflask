@@ -1,8 +1,10 @@
 ---
-- hosts: aws 
-  become: True
+- name: Verify docker installation
+  hosts: aws
   tasks:
-    - name: upgrade all packages
-      yum: name=* state=latest
-
+    - name: install docker package
+      package:
+        name:  docker
+        state: present
+  
 ...
