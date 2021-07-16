@@ -23,7 +23,4 @@
       service:
         name: nginx
         state: restarted
-    - name: Ensure docker-compose are installed
-      pip3:
-        name: docker-compose
-
+    
