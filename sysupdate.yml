@@ -7,11 +7,5 @@
       package:
         name:  docker
         state: present
-        
-    - name: copy file from local host to remote host (absolute path)
-      copy:
-        src:  /var/lib/jenkins/workspace/Docker_pipeline/docker-compose.yml
-        remote_src: true
-        dest: /home/docker-compose.yml
-  
+     
 ...
