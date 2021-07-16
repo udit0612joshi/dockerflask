@@ -1,6 +1,7 @@
 ---
 - name: Verify docker installation
   hosts: aws
+  become: yes
   tasks:
     - name: install docker package
       package:
