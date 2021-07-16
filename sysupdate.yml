@@ -11,6 +11,6 @@
       copy:
         src:  /var/lib/jenkins/workspace/Docker_pipeline/docker-compose.yml
         remote_src: true
-        dest: /root/docker-compose.yml
+        dest: /home/docker-compose.yml
   
 ...
