@@ -9,7 +9,7 @@
         
     - name: copy file from local host to remote host (absolute path)
       copy:
-        src:  docker-compose.yml
+        src:  /var/lib/jenkins/workspace/Docker_pipeline/docker-compose.yml
         remote_src: true
         dest: /root/docker-compose.yml
   
