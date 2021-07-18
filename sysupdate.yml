@@ -7,14 +7,14 @@
       package:
         name:  docker
         state: present
-    - name: install nginx  package
-      package:
-        name:  nginx
-        state: latest
-    - name: start nginx
-      service:
-          name: nginx
-          state: started
+#    - name: install nginx  package
+#      package:
+#        name:  nginx
+#        state: latest
+#    - name: start nginx
+#      service:
+#          name: nginx
+#          state: started
     - name: copy the nginx config file and restart nginx
       copy:
         src:  /var/lib/jenkins/workspace/Docker_pipeline/server.conf
