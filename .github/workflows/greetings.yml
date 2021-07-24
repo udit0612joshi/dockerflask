@@ -1,16 +1,17 @@
-name: Greetings
+name: Check and Merge pull request
 
-on: [pull_request, issues]
+on: [pull_request]
 
 jobs:
-  greeting:
+  check-commit-message:
+    name: Check Commit Message
     runs-on: ubuntu-latest
-    permissions:
-      issues: write
-      pull-requests: write
     steps:
-    - uses: actions/first-interaction@v1
-      with:
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
-        issue-message: 'Message that will be displayed on users first issue'
-        pr-message: 'Message that will be displayed on users first pull request'
+      - name: Check Commit Type
+        uses: gsactions/commit-message-checker@v1
+        with:
+          pattern: '^/submit$'
+          flags: 'gm'
+          error: 'Your first line has to contain a commit type like "[BUGFIX]".'
+
+    
