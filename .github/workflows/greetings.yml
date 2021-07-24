@@ -1,7 +1,11 @@
 name: pull request comment
 on:
-  issue_comment:                                     
-    types: [created, edited, deleted]
+  pull_request:
+    types:
+      - opened
+      - edited
+      - reopened
+      - synchronize
 
 jobs:
   check-commit-message:
