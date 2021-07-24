@@ -7,11 +7,10 @@ jobs:
     name: Check Commit Message
     runs-on: ubuntu-latest
     steps:
-      - name: Check Commit Type
-        uses: gsactions/commit-message-checker@v1
-        with:
-          pattern: '^/submit$'
-          flags: 'gm'
-          error: 'Your first line has to contain a commit type like "[BUGFIX]".'
+      - name: say hello
+        if: contains(github.event.comment.body, '/submit')   # check the comment if it contains the keywords
+        run: |
+          echo say hello
+       
 
     
