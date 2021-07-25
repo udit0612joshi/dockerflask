@@ -39,7 +39,7 @@ jobs:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
           source_folder: '/templates'
-          destination_repo: 'udit0612joshi/psychic-barnacle-dockerflask'
+          destination_repo: 'https://github.com/udit0612joshi/psychic-barnacle-dockerflask.git'
           destination_head_branch: 'branch-name'
           user_email: 'uditjoshi0612@gmail.com'
           user_name: 'udit0612joshi'
