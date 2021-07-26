@@ -18,15 +18,11 @@ jobs:
   check_pr:
     runs-on: ubuntu-latest
     steps:
-    - name: Check PR
-      uses: JJ/github-pr-contains-action@releases/v0
-      with:
-        github-token: ${{github.token}}
-        bodyDoesNotContain: "Delete this"
-        bodyContains: 'submit'
-        diffContains: 'submit'
-        filesChanged: 1
-        linesChanged: 1
+     - name: say hello
+       if: contains(github.event.comment.body, '/submit')   # check the comment if it contains the keywords
+       run: |
+         echo submit is found int the comment
+         echo github.event.comment.body
   job2:
     needs: check_pr
     runs-on: ubuntu-latest 
@@ -43,4 +39,3 @@ jobs:
           user_email: 'uditjoshi0612@gmail.com'
           user_name: 'udit0612joshi'
           pull_request_reviewers: 'udit0612joshi'
-        #needs: check_comment
